@@ -6,7 +6,7 @@ import { editCommand } from "./commands/edit.js";
 import { deleteCommand } from "./commands/delete.js";
 import { claudeCommand } from "./commands/claude.js";
 
-const cli = cac("cc");
+const cli = cac("cc-wrapper");
 
 cli
   .command("new", "Create a new profile")

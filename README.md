@@ -13,55 +13,55 @@ npm install -g cc-wrapper
 ### Create a profile
 
 ```bash
-cc new
+cc-wrapper new
 ```
 
 ### List profiles
 
 ```bash
-cc list
+cc-wrapper list
 ```
 
 ### Set default profile
 
 ```bash
-cc default local
+cc-wrapper default local
 ```
 
 ### Edit a profile
 
 ```bash
-cc edit local
+cc-wrapper edit local
 ```
 
 ### Delete a profile
 
 ```bash
-cc delete local
+cc-wrapper delete local
 ```
 
 ### Run claude
 
 ```bash
-cc claude
+cc-wrapper claude
 ```
 
 Passes all extra args directly to claude:
 
 ```bash
-cc claude --print "hello"
+cc-wrapper claude --print "hello"
 ```
 
 Disable `--dangerously-skip-permissions` injection:
 
 ```bash
-cc claude --dd
+cc-wrapper claude --dd
 ```
 
 Use a specific profile:
 
 ```bash
-cc claude --profile openrouter
+cc-wrapper claude --profile openrouter
 ```
 
 ## Sync env vars from Claude docs

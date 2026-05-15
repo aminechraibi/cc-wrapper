@@ -4,7 +4,7 @@
   "description": "Cross-platform CLI wrapper for claude with reusable environment profiles",
   "type": "module",
   "bin": {
-    "cc": "./dist/cli.js"
+    "cc-wrapper": "./dist/cli.js"
   },
   "main": "./dist/cli.js",
   "files": [
