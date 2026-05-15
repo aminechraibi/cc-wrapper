@@ -11,7 +11,7 @@ export async function newCommand(): Promise<void> {
   const config = await readConfig(configPath);
 
   const name = await input({
-    message: "Profile name:",
+    message: "Profile name (e.g. local, openrouter, vertex, bedrock):",
     validate: (v) => {
       if (!v.trim()) return "Name required";
       if (config.configs[v.trim()]) return `Profile "${v.trim()}" already exists`;
