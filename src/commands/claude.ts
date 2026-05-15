@@ -26,7 +26,7 @@ export async function claudeCommand(
 
   const profileName = options.profile ?? config.default;
   if (!profileName) {
-    console.error(chalk.red("No default profile set. Run `cc new` or `cc default <name>`."));
+    console.error(chalk.red("No default profile set. Run `cc-wrapper new` or `cc-wrapper default <name>`."));
     process.exit(1);
   }
 

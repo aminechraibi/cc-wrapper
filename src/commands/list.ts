@@ -7,7 +7,7 @@ export async function listCommand(): Promise<void> {
   const names = Object.keys(config.configs);
 
   if (names.length === 0) {
-    console.log(chalk.dim("No profiles. Run `cc new` to create one."));
+    console.log(chalk.dim("No profiles. Run `cc-wrapper new` to create one."));
     return;
   }
 
