@@ -30,8 +30,8 @@ export async function promptEnvSelection(
 ): Promise<Record<string, string>> {
   const selected = await checkbox({
     message: "Select env vars (SPACE to toggle, ENTER to confirm):",
-    choices: envVars.map((v) => ({
-      name: `${v.name}${existing[v.name] ? ` [${maskValue(existing[v.name])}]` : ""}`,
+    choices: envVars.map((v, i) => ({
+      name: `${String(i + 1).padStart(2)}. ${v.name}${existing[v.name] ? ` [${maskValue(existing[v.name])}]` : ""}`,
       value: v.name,
       checked: v.name in existing,
       description: v.description,

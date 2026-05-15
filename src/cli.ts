@@ -1,10 +1,34 @@
 import { cac } from "cac";
+import chalk from "chalk";
 import { newCommand } from "./commands/new.js";
 import { listCommand } from "./commands/list.js";
 import { defaultCommand } from "./commands/default.js";
 import { editCommand } from "./commands/edit.js";
 import { deleteCommand } from "./commands/delete.js";
 import { claudeCommand } from "./commands/claude.js";
+
+process.on("SIGINT", () => {
+  process.stdout.write("\n");
+  process.exit(0);
+});
+
+process.on("uncaughtException", (err: Error) => {
+  if (err.name === "ExitPromptError") {
+    process.stdout.write("\n");
+    process.exit(0);
+  }
+  console.error(chalk.red(`Error: ${err.message}`));
+  process.exit(1);
+});
+
+process.on("unhandledRejection", (reason: unknown) => {
+  if (reason instanceof Error && reason.name === "ExitPromptError") {
+    process.stdout.write("\n");
+    process.exit(0);
+  }
+  console.error(chalk.red(`Error: ${String(reason)}`));
+  process.exit(1);
+});
 
 const cli = cac("cc-wrapper");
 
