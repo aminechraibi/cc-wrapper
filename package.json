@@ -1,6 +1,6 @@
 {
   "name": "cc-wrapper",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "description": "Cross-platform CLI wrapper for claude with reusable environment profiles",
   "type": "module",
   "bin": {
@@ -16,10 +16,16 @@
     "start": "node dist/cli.js",
     "test": "vitest run",
     "test:watch": "vitest",
-    "sync-envs": "npx tsx scripts/sync-envs.ts",
+    "sync-envs": "npx tsx scripts/sync-envs.ts && npm run build",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["claude", "anthropic", "cli", "wrapper", "profiles"],
+  "keywords": [
+    "claude",
+    "anthropic",
+    "cli",
+    "wrapper",
+    "profiles"
+  ],
   "author": "Amine Chraibi <aminechraibi2020@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -34,6 +40,7 @@
     "node": ">=20"
   },
   "dependencies": {
+    "@inquirer/core": "^11.1.10",
     "@inquirer/prompts": "^7.5.0",
     "cac": "^6.7.14",
     "chalk": "^5.4.1",
@@ -45,8 +52,8 @@
   "devDependencies": {
     "@types/cross-spawn": "^6.0.6",
     "@types/node": "^20.0.0",
-    "tsx": "^4.19.4",
     "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3",
     "vitest": "^3.1.4"
   }
