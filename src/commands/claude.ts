@@ -39,9 +39,22 @@ export async function claudeCommand(
   const args = buildClaudeArgs(profile.args, extraArgs, !!options.dd);
   const env: NodeJS.ProcessEnv = { ...process.env, ...profile.env };
 
-  const spinner = ora(`Launching claude (profile: ${profileName})`).start();
-  console.log(chalk.dim("env: " + JSON.stringify(maskEnv(profile.env))));
+  const spinner = ora("Launching claude...").start();
   spinner.stop();
+
+  console.log(chalk.bold.cyan("cc-wrapper") + chalk.dim(" › ") + chalk.bold(`profile: ${profileName}`));
+
+  const masked = maskEnv(profile.env);
+  const envEntries = Object.entries(masked);
+  if (envEntries.length > 0) {
+    const keyWidth = Math.max(...envEntries.map(([k]) => k.length));
+    for (const [k, v] of envEntries) {
+      console.log(
+        chalk.dim("  " + k.padEnd(keyWidth, " ") + "  ") + chalk.yellow(v)
+      );
+    }
+  }
+  console.log();
 
   const code = await spawnClaude(args, env);
   process.exit(code);
