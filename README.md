@@ -158,6 +158,28 @@ If the deleted profile was the default, the next available profile becomes the n
 
 ---
 
+### `cc-wrapper show <name>`
+
+Display all env vars and args stored in a profile. Secret values (keys, tokens, passwords) are masked.
+
+```bash
+cc-wrapper show local
+```
+
+Output example:
+
+```
+cc-wrapper › local (default)
+
+  env:
+    ANTHROPIC_BASE_URL    http://localhost:8787
+    ANTHROPIC_API_KEY     sk-a*****
+
+  args: --dangerously-skip-permissions
+```
+
+---
+
 ### `cc-wrapper claude [args...]`
 
 Launch `claude` with the default profile's environment variables injected.

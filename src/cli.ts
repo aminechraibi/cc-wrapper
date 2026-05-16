@@ -6,6 +6,7 @@ import { defaultCommand } from "./commands/default.js";
 import { editCommand } from "./commands/edit.js";
 import { deleteCommand } from "./commands/delete.js";
 import { claudeCommand } from "./commands/claude.js";
+import { showCommand } from "./commands/show.js";
 
 process.on("SIGINT", () => {
   process.stdout.write("\n");
@@ -53,6 +54,10 @@ cli
   .action(deleteCommand);
 
 cli
+  .command("show <name>", "Show profile env vars and args")
+  .action(showCommand);
+
+cli
   .command("claude [...args]", "Run claude with the default profile")
   .option("--dd", "Disable --dangerously-skip-permissions injection")
   .option("-p, --profile <name>", "Use a specific profile instead of default")
@@ -61,6 +66,6 @@ cli
   });
 
 cli.help();
-cli.version("0.3.0");
+cli.version("0.3.2");
 
 cli.parse();

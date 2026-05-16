@@ -53,11 +53,17 @@ export const searchableCheckbox = createPrompt<string[], Config>(
     const safeCursor =
       filtered.length === 0 ? 0 : Math.min(cursor, filtered.length - 1);
 
-    useKeypress((key) => {
+    useKeypress(async (key) => {
       if (isDone) return;
 
       if (isEnterKey(key)) {
         setIsDone(true);
+        // Defer done() by one event-loop cycle (poll → check) so that the
+        // trailing \n from Windows \r\n arrives as a keypress while this
+        // handler is still registered (isDone=true → silently discarded).
+        // Newer @inquirer/core resolves synchronously; older versions used
+        // setImmediate, which naturally absorbed the phantom keystroke.
+        await new Promise<void>((r) => setImmediate(r));
         done(
           config.choices
             .filter((_, i) => checked.has(i))
@@ -84,7 +90,9 @@ export const searchableCheckbox = createPrompt<string[], Config>(
         key.sequence &&
         key.sequence.length === 1 &&
         !key.ctrl &&
-        !key.meta
+        !key.meta &&
+        key.sequence !== '\r' &&
+        key.sequence !== '\n'
       ) {
         setSearch(search + key.sequence);
         setCursor(0);
