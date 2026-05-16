@@ -1,6 +1,6 @@
 {
   "name": "cc-wrapper",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Cross-platform CLI wrapper for claude with reusable environment profiles",
   "type": "module",
   "bin": {
