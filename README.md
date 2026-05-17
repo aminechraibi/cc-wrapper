@@ -315,9 +315,7 @@ npm run sync-envs
 
 Found this useful? A coffee goes a long way ☕
 
-<a href="https://www.buymeacoffee.com/addev" target="_blank" title="Buy me a coffee">
-  <img src="https://iili.io/JoQ1MeS.md.png" alt="Buy me a coffee" style="width: 200px;">
-</a>
+<a href='https://ko-fi.com/P5P21ZQGK2' target='_blank'><img height='72' style='border:0px;height:72px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ---
 
