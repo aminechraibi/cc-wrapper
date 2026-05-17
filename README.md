@@ -313,8 +313,10 @@ npm run sync-envs
 
 ## Support
 
-<a href="https://www.buymeacoffee.com/addev" target="_blank" title="buymeacoffee">
-  <img src="https://iili.io/JoQ1MeS.md.png" alt="buymeacoffee-yellow-badge" style="width: 104px;">
+Found this useful? A coffee goes a long way ☕
+
+<a href="https://www.buymeacoffee.com/addev" target="_blank" title="Buy me a coffee">
+  <img src="https://iili.io/JoQ1MeS.md.png" alt="Buy me a coffee" style="width: 200px;">
 </a>
 
 ---
