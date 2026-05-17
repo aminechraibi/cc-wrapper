@@ -311,6 +311,14 @@ npm run sync-envs
 
 ---
 
+## Support
+
+<a href="https://www.buymeacoffee.com/addev" target="_blank" title="buymeacoffee">
+  <img src="https://iili.io/JoQ1MeS.md.png" alt="buymeacoffee-yellow-badge" style="width: 104px;">
+</a>
+
+---
+
 ## License
 
 MIT — [Amine Chraibi](https://github.com/aminechraibi)
